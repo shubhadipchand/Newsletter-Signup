@@ -3,6 +3,7 @@ const request = require("request");
 const app = express();
 const bodyParser = require("body-parser");
 const https = require("https");
+require('dotenv').config();
 
 
 app.use(bodyParser.urlencoded({extended:true}));
@@ -33,7 +34,7 @@ var data={
 const url= 'https://us13.api.mailchimp.com/3.0/lists/7e9ee0ca66';
 const options = {
   method: "post",
-  auth: "sdip:80a848a2b4be725acdfd47b32bce4bb4-us13"
+  auth: "sdip:" + process.env.API_KEY
 }
 
 
